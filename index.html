@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jojor Putri Pasaribu — Research Atelier</title>
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;var l=localStorage.getItem('lang');if(l==='id')document.documentElement.lang='id'}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{bg:'var(--bg)',surface:'var(--surface)',ink:'var(--ink)',mute:'var(--mute)',accent:'var(--accent)',terra:'var(--terra)',line:'var(--line)'},fontFamily:{serif:['"DM Serif Display"','Georgia','serif'],sans:['Inter','system-ui','sans-serif'],mono:['"IBM Plex Mono"','ui-monospace','monospace']}}}};
+</script>
+<style>
+:root{--bg:#F5F3EB;--surface:#FFFFFF;--ink:#222A23;--mute:#62675F;--accent:#355A40;--terra:#B87954;--line:#D7D7CA;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E211E;--surface:#272B27;--ink:#F2F1E9;--mute:#B4B8AC;--accent:#8CC29A;--terra:#D49A74;--line:#3A3F39}}
+:root[data-theme="dark"]{--bg:#1E211E;--surface:#272B27;--ink:#F2F1E9;--mute:#B4B8AC;--accent:#8CC29A;--terra:#D49A74;--line:#3A3F39}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;min-height:100%;overflow-x:hidden}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 1.25rem;border:1px solid var(--accent);font-weight:500;transition:background .2s,color .2s}
+.btn-p{background:var(--accent);color:var(--bg)}.btn-p:hover{opacity:.9}
+.btn-s:hover{background:var(--accent);color:var(--bg)}
+.chip{min-height:44px;padding:0 1rem;border:1px solid var(--line);font-size:.85rem}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+.ph{aspect-ratio:16/10;background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--line) 55%,transparent) 10px 11px);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+dialog{background:var(--surface);color:var(--ink);border:1px solid var(--line);max-width:760px;width:calc(100% - 1.5rem);max-height:90vh;padding:0;margin:auto}
+dialog::backdrop{background:rgba(20,24,20,.6)}
+nav a[aria-current="true"]{color:var(--accent);border-bottom:2px solid var(--accent)}
+.badge{border:1px solid var(--terra);color:var(--terra);padding:.1rem .5rem}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-surface focus:p-3" data-i="skip">Skip to content</a>
+<header class="sticky top-0 z-40 border-b border-line" style="background:color-mix(in srgb,var(--bg) 94%,transparent)">
+ <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+  <a href="#home" class="font-serif text-xl">J. P. Pasaribu</a>
+  <nav id="nav" class="hidden md:flex gap-6 text-sm" data-ia="navL" aria-label="Primary">
+   <a href="#home" data-i="nHome" class="py-2">Home</a><a href="#projects" data-i="nProj" class="py-2">Projects</a><a href="#publications" data-i="nPub" class="py-2">Publications</a><a href="#about" data-i="nAbout" class="py-2">About</a><a href="#contact" data-i="nContact" class="py-2">Contact</a>
+  </nav>
+  <div class="flex items-center gap-2">
+   <button id="langB" class="chip mono" aria-label="Language">EN / ID</button>
+   <button id="themeB" class="chip" data-ia="themeL" aria-label="Toggle theme">◐</button>
+   <button id="menuB" class="chip md:hidden" aria-expanded="false" aria-controls="nav" data-ia="menuL" aria-label="Menu">☰</button>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<section id="home" class="max-w-6xl mx-auto px-5 pt-16 pb-20 grid md:grid-cols-12 gap-10 items-end">
+ <div class="md:col-span-7 rv">
+  <p class="mono mb-5">00 — <span data-i="role">Data analysis · Machine learning · Applied research</span></p>
+  <h1 class="font-serif text-4xl md:text-6xl leading-tight" data-i="headline">Exploring data. Investigating ideas. Building meaningful solutions.</h1>
+  <p class="mt-6 text-mute max-w-xl leading-relaxed" data-i="bio"></p>
+  <p class="mt-3 font-serif text-xl">Jojor Putri Pasaribu</p>
+  <div class="mt-8 flex flex-wrap gap-3">
+   <a href="#projects" class="btn btn-p" data-i="cta1">Explore Projects</a>
+   <a href="#publications" class="btn btn-s" data-i="cta2">Browse Publications</a>
+  </div>
+ </div>
+ <aside class="md:col-span-5 rv">
+  <div class="ph"><div><p class="mono mb-2" data-i="featL">Featured preview</p><p class="font-serif text-xl" data-i="featT">Featured project or research figure goes here</p><p class="text-sm text-mute mt-2" data-i="featD">Placeholder — replace with an approved screenshot or figure.</p></div></div>
+ </aside>
+</section>
+
+<section id="projects" class="border-t border-line">
+ <div class="max-w-6xl mx-auto px-5 py-20">
+  <p class="mono">01</p>
+  <h2 class="font-serif text-3xl md:text-4xl mt-2" data-i="nProj">Projects</h2>
+  <p class="text-mute mt-3 max-w-2xl" data-i="projIntro"></p>
+  <div id="pf" class="flex flex-wrap gap-2 mt-8" role="group" data-ia="filterL" aria-label="Filter projects"></div>
+  <div id="pg" class="grid md:grid-cols-2 gap-8 mt-8"></div>
+ </div>
+</section>
+
+<section id="publications" class="border-t border-line">
+ <div class="max-w-6xl mx-auto px-5 py-20">
+  <p class="mono">02</p>
+  <h2 class="font-serif text-3xl md:text-4xl mt-2" data-i="nPub">Publications</h2>
+  <p class="text-mute mt-3 max-w-2xl" data-i="pubIntro"></p>
+  <div id="pubf" class="flex flex-wrap gap-2 mt-8" role="group" data-ia="filterL" aria-label="Filter publications"></div>
+  <ol id="pl" class="mt-6 border-t border-line"></ol>
+ </div>
+</section>
+
+<section id="about" class="border-t border-line">
+ <div class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-12 gap-10">
+  <div class="md:col-span-4">
+   <p class="mono">03</p>
+   <h2 class="font-serif text-3xl md:text-4xl mt-2" data-i="nAbout">About</h2>
+   <figure class="mt-6 max-w-[16rem]"><div class="relative border border-line overflow-hidden" style="aspect-ratio:4/5;background:var(--surface)"><div class="absolute inset-0 flex items-center justify-center font-serif text-6xl text-mute" aria-hidden="true">JPP</div><img src="assets/images/profile/jojor-putri-pasaribu.jpg" data-alt="photoAlt" alt="" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"></div><figcaption class="mono mt-2" data-i="photoCap"></figcaption></figure>
+   <p class="text-mute mt-4 leading-relaxed" data-i="bio"></p>
+  </div>
+  <div class="md:col-span-8">
+   <h3 class="mono mb-3" data-i="edu">Education</h3><div id="tEdu" class="mb-10"></div>
+   <h3 class="mono mb-3" data-i="exp">Experience</h3><div id="tExp" class="mb-10"></div>
+   <h3 class="mono mb-3" data-i="trn">Training</h3><div id="tTrn" class="mb-10"></div>
+   <h3 class="mono mb-3" data-i="skl">Skills</h3><div id="sk" class="grid sm:grid-cols-2 gap-6"></div>
+   <p class="text-xs text-mute mt-6" data-i="skNote"></p>
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="border-t border-line">
+ <div class="max-w-6xl mx-auto px-5 py-20">
+  <p class="mono">04</p>
+  <h2 class="font-serif text-3xl md:text-4xl mt-2" data-i="nContact">Contact</h2>
+  <p class="text-mute mt-3 max-w-xl" data-i="contactIntro"></p>
+  <ul id="cl" class="mt-8 border-t border-line max-w-xl"></ul>
+ </div>
+</section>
+</main>
+
+<footer class="border-t border-line"><div class="max-w-6xl mx-auto px-5 py-8 flex flex-wrap justify-between gap-2 mono"><span>© 2026 Jojor Putri Pasaribu</span><span data-i="foot"></span></div></footer>
+
+<dialog id="dlg" aria-labelledby="dT"><div class="p-6 md:p-8 overflow-y-auto" style="max-height:90vh"><button id="dX" class="chip float-right" data-ia="closeL" aria-label="Close">✕</button><div id="dB"></div></div></dialog>
+
+<script>
+const T={en:{skip:'Skip to content',navL:'Primary',nHome:'Home',nProj:'Projects',nPub:'Publications',nAbout:'About',nContact:'Contact',themeL:'Toggle light/dark theme',menuL:'Open menu',closeL:'Close',filterL:'Filter',
+role:'Data analysis · Machine learning · Applied research',headline:'Exploring data. Investigating ideas. Building meaningful solutions.',
+bio:'Computer Science graduate (Universitas Negeri Medan, 2025) with experience in data research, academic machine learning studies, and software development.',
+cta1:'Explore Projects',cta2:'Browse Publications',featL:'Featured preview',featT:'Featured project or research figure goes here',featD:'Placeholder — replace with an approved screenshot or figure.',
+projIntro:'Practical implementation and ongoing work, kept separate from scientific publications.',all:'All Projects',prog:'In Progress',done:'Completed',cDA:'Data Analysis',cML:'Machine Learning',
+details:'View Details',empty:'No items match this filter.',ph:'Placeholder — content to be documented by Jojor.',phImg:'Project screenshot placeholder',
+pdesc:'Description',prob:'Problem',sol:'Solution',feat:'Key features',tech:'Technology stack',chal:'Technical challenges',contrib:'Personal contribution',
+pubIntro:'Research topics listed in the CV. Entries are not presented as verified peer-reviewed publications until authorship, venue and status are confirmed.',
+allT:'All topics',pML:'Machine Learning',pDL:'Deep Learning & Computer Vision',pDS:'Decision Support',pPM:'Predictive Modeling',
+read:'Read paper',photoCap:'Portrait placeholder — replace with approved photo',photoAlt:'Portrait of Jojor Putri Pasaribu',method:'Method',unver:'Needs verification',abs:'Abstract',absNone:'Abstract, authors, venue and link not yet supplied — to be added once verified.',show:'Show details',hide:'Hide details',
+nAbout2:'About',edu:'Education',exp:'Experience',trn:'Training',skl:'Skills',
+skNote:'Skill groups are summarized from CV topics and are to be confirmed by Jojor. No proficiency ratings are shown.',
+contactIntro:'Interested in data research, machine learning, or collaboration? Get in touch.',email:'Email',li:'LinkedIn',gh:'GitHub (optional)',cv:'CV (optional)',soon:'To be confirmed before publishing',
+foot:'Content marked “placeholder” awaits approved material.',present:'Present'},
+id:{skip:'Lompat ke konten',navL:'Navigasi utama',nHome:'Beranda',nProj:'Proyek',nPub:'Publikasi',nAbout:'Tentang',nContact:'Kontak',themeL:'Ganti tema terang/gelap',menuL:'Buka menu',closeL:'Tutup',filterL:'Saring',
+role:'Analisis data · Pembelajaran mesin · Riset terapan',headline:'Menggali data. Meneliti ide. Membangun solusi yang bermakna.',
+bio:'Lulusan Ilmu Komputer (Universitas Negeri Medan, 2025) dengan pengalaman riset data, studi akademik pembelajaran mesin, dan pengembangan perangkat lunak.',
+cta1:'Jelajahi Proyek',cta2:'Lihat Publikasi',featL:'Pratinjau unggulan',featT:'Proyek atau gambar riset unggulan akan ditempatkan di sini',featD:'Placeholder — ganti dengan tangkapan layar atau gambar yang telah disetujui.',
+projIntro:'Implementasi praktis dan pekerjaan yang sedang berjalan, terpisah dari publikasi ilmiah.',all:'Semua Proyek',prog:'Sedang Berjalan',done:'Selesai',cDA:'Analisis Data',cML:'Pembelajaran Mesin',
+details:'Lihat Detail',empty:'Tidak ada item yang sesuai.',ph:'Placeholder — konten akan didokumentasikan oleh Jojor.',phImg:'Placeholder tangkapan layar proyek',
+pdesc:'Deskripsi',prob:'Masalah',sol:'Solusi',feat:'Fitur utama',tech:'Teknologi',chal:'Tantangan teknis',contrib:'Kontribusi pribadi',
+pubIntro:'Topik riset dalam CV. Entri belum disajikan sebagai publikasi tinjauan sejawat terverifikasi sampai penulis, venue, dan statusnya dikonfirmasi.',
+allT:'Semua topik',pML:'Pembelajaran Mesin',pDL:'Deep Learning & Visi Komputer',pDS:'Sistem Pendukung Keputusan',pPM:'Pemodelan Prediktif',
+read:'Baca makalah',photoCap:'Placeholder foto — ganti dengan foto yang disetujui',photoAlt:'Potret Jojor Putri Pasaribu',method:'Metode',unver:'Perlu verifikasi',abs:'Abstrak',absNone:'Abstrak, penulis, venue, dan tautan belum tersedia — akan ditambahkan setelah diverifikasi.',show:'Tampilkan detail',hide:'Sembunyikan detail',
+nAbout2:'Tentang',edu:'Pendidikan',exp:'Pengalaman',trn:'Pelatihan',skl:'Keahlian',
+skNote:'Kelompok keahlian dirangkum dari topik CV dan perlu dikonfirmasi Jojor. Tidak ada peringkat kemahiran.',
+contactIntro:'Tertarik pada riset data, pembelajaran mesin, atau kolaborasi? Silakan hubungi.',email:'Email',li:'LinkedIn',gh:'GitHub (opsional)',cv:'CV (opsional)',soon:'Perlu dikonfirmasi sebelum dipublikasikan',
+foot:'Konten bertanda “placeholder” menunggu materi yang disetujui.',present:'Sekarang'}};
+const PH={en:T.en.ph,id:T.id.ph};
+const projects=[
+{id:'p1',cat:'DA',status:'prog',title:{en:'Ongoing project (placeholder)',id:'Proyek berjalan (placeholder)'},sum:PH,problem:PH,solution:PH,features:PH,chal:PH,contrib:PH,tech:[],alt:{en:'Placeholder for project screenshot',id:'Placeholder tangkapan layar proyek'},repo:null,live:null},
+{id:'p2',cat:'ML',status:'done',title:{en:'Completed project (placeholder)',id:'Proyek selesai (placeholder)'},sum:PH,problem:PH,solution:PH,features:PH,chal:PH,contrib:PH,tech:[],alt:{en:'Placeholder for project screenshot',id:'Placeholder tangkapan layar proyek'},repo:null,live:null}];
+const pubs=[
+{y:2025,url:'https://example.com/paper-1',cat:'pML',title:'Comparative performance of ANN and machine learning algorithms for diabetes classification',tid:'Perbandingan kinerja ANN dan algoritma pembelajaran mesin untuk klasifikasi diabetes',m:'ANN; ML algorithms'},
+{y:2024,url:'https://example.com/paper-2',cat:'pPM',title:'Dynamic system modeling for rainfall intensity prediction in Deli Serdang',tid:'Pemodelan sistem dinamis untuk prediksi intensitas curah hujan di Deli Serdang',m:{en:'Dynamic system modeling',id:'Pemodelan sistem dinamis'}},
+{y:2024,url:'https://example.com/paper-3',cat:'pDS',title:'Analytical Hierarchy Process for selecting private universities in Medan',tid:'Analytical Hierarchy Process untuk pemilihan perguruan tinggi swasta di Medan',m:'Analytical Hierarchy Process (AHP)'},
+{y:2023,url:'https://example.com/paper-4',cat:'pDL',title:'Herbal plant classification using leaf images and CNN',tid:'Klasifikasi tanaman herbal menggunakan citra daun dan CNN',m:'CNN'},
+{y:2023,url:'https://example.com/paper-5',cat:'pML',title:'Random Forest for stroke diagnosis classification',tid:'Random Forest untuk klasifikasi diagnosis stroke',m:'Random Forest'}];
+const tl={edu:[{w:'Aug 2021 – Jun 2025',w2:'Agu 2021 – Jun 2025',a:'Universitas Negeri Medan',b:{en:'Bachelor of Computer Science · GPA 3.67/4.00',id:'Sarjana Ilmu Komputer · IPK 3,67/4,00'}}],
+exp:[{w:'Dec 2025 – Jun 2026',w2:'Des 2025 – Jun 2026',a:'Mulki Vokasi Indonesia',b:{en:'Data Research Intern',id:'Magang Riset Data'}},
+{w:'Dec 2025 – Feb 2026',w2:'Des 2025 – Feb 2026',a:'Mahaesa Dwidaya Pertiga',b:{en:'Data Research Intern',id:'Magang Riset Data'}},
+{w:'Feb – Apr 2024',w2:'Feb – Apr 2024',a:'SMK Negeri 1 Percut Sei Tuan',b:{en:'Software Developer Intern',id:'Magang Pengembang Perangkat Lunak'}}],
+trn:[{w:'Sep – Dec 2024',w2:'Sep – Des 2024',a:'Bangkit Academy',b:{en:'Cloud Computing Student',id:'Peserta Cloud Computing'}},
+{w:'Mar – Jun 2024',w2:'Mar – Jun 2024',a:'Samsung Innovation Campus',b:{en:'Participant',id:'Peserta'}}]};
+const skills=[{en:'Data handling',id:'Penanganan data',i:{en:'Data research · classification datasets',id:'Riset data · dataset klasifikasi'}},
+{en:'Machine learning',id:'Pembelajaran mesin',i:{en:'ANN · CNN · Random Forest',id:'ANN · CNN · Random Forest'}},
+{en:'Programming & cloud',id:'Pemrograman & cloud',i:{en:'Software development · cloud computing',id:'Pengembangan perangkat lunak · cloud computing'}},
+{en:'Decision support & collaboration',id:'Pendukung keputusan & kolaborasi',i:{en:'AHP · internship team work',id:'AHP · kerja tim magang'}}];
+const contacts=[['email',null],['li',null],['gh',null],['cv',null]];
+
+let lang='en',pf='all',pubf='all',lastFocus=null;
+try{lang=localStorage.getItem('lang')==='id'?'id':'en'}catch(e){}
+const $=s=>document.querySelector(s),t=k=>T[lang][k]??k,
+ L=o=>typeof o==='string'?o:o[lang];
+function h(tag,cls,txt,kids){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;(kids||[]).forEach(k=>e.append(k));return e}
+function safeUrl(u){try{const x=new URL(u);return /^https?:$/.test(x.protocol)?x.href:null}catch(e){return null}}
+
+function chips(box,items,cur,fn){box.replaceChildren(...items.map(([v,l])=>{const b=h('button','chip',l);b.type='button';b.setAttribute('aria-pressed',String(v===cur));b.onclick=()=>fn(v);return b}))}
+function status(s){return h('span','badge mono',t(s))}
+function ph(txt,alt){const d=h('div','ph',null,[h('p','mono',txt)]);d.setAttribute('role','img');d.setAttribute('aria-label',alt);return d}
+
+function renderProjects(){
+ chips($('#pf'),[['all',t('all')],['prog',t('prog')],['done',t('done')]],pf,v=>{pf=v;renderProjects()});
+ const list=projects.filter(p=>pf==='all'||p.status===pf);
+ $('#pg').replaceChildren(...(list.length?list.map(p=>{
+  const btn=h('button','btn btn-s mt-4',t('details'));btn.type='button';btn.onclick=()=>openProject(p,btn);
+  return h('article','rv in',null,[ph(t('phImg'),L(p.alt)),
+   h('div','flex gap-3 items-center mt-4',null,[status(p.status),h('span','mono',t(p.cat==='DA'?'cDA':'cML'))]),
+   h('h3','font-serif text-2xl mt-2',L(p.title)),h('p','text-mute mt-2',L(p.sum)),btn])}):[h('p','text-mute',t('empty'))]));
+}
+function sec(d,k,c){d.append(h('h3','mono mt-6 mb-2',t(k)),typeof c==='string'?h('p','leading-relaxed',c):c)}
+function openProject(p,trg){
+ lastFocus=trg;const d=$('#dB');d.replaceChildren(ph(t('phImg'),L(p.alt)),
+  h('div','flex gap-3 items-center mt-5',null,[status(p.status),h('span','mono',t(p.cat==='DA'?'cDA':'cML'))]));
+ const hh=h('h2','font-serif text-3xl mt-2',L(p.title));hh.id='dT';d.append(hh);
+ sec(d,'pdesc',L(p.sum));sec(d,'prob',L(p.problem));sec(d,'sol',L(p.solution));sec(d,'feat',L(p.features));
+ sec(d,'tech',p.tech.length?p.tech.join(' · '):t('ph'));sec(d,'chal',L(p.chal));sec(d,'contrib',L(p.contrib));
+ [[p.repo,'Repository'],[p.live,'Live']].forEach(([u,l])=>{const s=u&&safeUrl(u);if(s){const a=h('a','btn btn-s mr-2 mt-6',l);a.href=s;a.target='_blank';a.rel='noopener noreferrer';d.append(a)}});
+ $('#dlg').showModal();
+}
+function renderPubs(){
+ const cats=['pML','pDL','pDS','pPM'];
+ chips($('#pubf'),[['all',t('allT')],...cats.map(c=>[c,t(c)])],pubf,v=>{pubf=v;renderPubs()});
+ const list=pubs.filter(p=>pubf==='all'||p.cat===pubf);
+ $('#pl').replaceChildren(...(list.length?list.map((p,i)=>{
+  const us=safeUrl(p.url),lk=us?(()=>{const a=h('a','btn btn-s mt-3 mr-3',t('read')+' ↗');a.href=us;a.target='_blank';a.rel='noopener noreferrer';return a})():null,id='pd'+p.y+i,det=h('div','mt-3 text-sm space-y-2 max-w-2xl',null,[
+   h('p',null,null,[h('span','mono mr-2',t('method')),document.createTextNode(L(p.m))]),
+   h('p','mono',t('abs')),h('p','text-mute',t('absNone'))]);
+  det.id=id;det.hidden=true;
+  const b=h('button','mono underline mt-3 min-h-[44px]',t('show'));b.type='button';b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls',id);
+  b.onclick=()=>{const o=det.hidden;det.hidden=!o;b.setAttribute('aria-expanded',String(o));b.textContent=t(o?'hide':'show')};
+  return h('li','border-b border-line py-6 grid md:grid-cols-12 gap-3',null,[
+   h('div','md:col-span-2 mono',p.y+' · '+t(p.cat)),
+   h('div','md:col-span-10',null,[h('h3','font-serif text-xl',p.title),
+    ...(lang==='id'?[h('p','text-sm text-mute italic',p.tid)]:[]),
+    h('p','mt-2',null,[h('span','badge mono',t('unver'))]),...(lk?[h('div',null,null,[lk])]:[]),b,det])])}):[h('li','text-mute py-6',t('empty'))]));
+}
+function tline(id,arr){$(id).replaceChildren(...arr.map(r=>h('div','grid sm:grid-cols-4 gap-1 border-t border-line py-4',null,[h('div','mono',lang==='id'?r.w2:r.w),h('div','sm:col-span-3',null,[h('p','font-serif text-xl',r.a),h('p','text-mute text-sm',L(r.b))])])))}
+function renderAbout(){tline('#tEdu',tl.edu);tline('#tExp',tl.exp);tline('#tTrn',tl.trn);
+ $('#sk').replaceChildren(...skills.map(s=>h('div','border-t border-line pt-3',null,[h('p','font-medium',L(s)),h('p','text-sm text-mute',L(s.i))])))}
+function renderContact(){$('#cl').replaceChildren(...contacts.map(([k,u])=>{const s=u&&safeUrl(u);
+ const v=s?(()=>{const a=h('a','underline',s.replace(/^https?:\/\//,''));a.href=s;a.target='_blank';a.rel='noopener noreferrer';return a})():h('span','text-mute text-sm',t('soon'));
+ return h('li','flex justify-between gap-4 border-b border-line py-4',null,[h('span','mono',t(k)),v])}))}
+
+function applyStatic(){document.documentElement.lang=lang;
+ document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));
+ document.querySelectorAll('[data-ia]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.ia)));
+ document.querySelectorAll('[data-alt]').forEach(e=>e.alt=t(e.dataset.alt));
+ $('#langB').setAttribute('aria-label',lang==='en'?'Language: English (switch to Bahasa Indonesia)':'Bahasa: Indonesia (ganti ke English)');
+ $('#langB').innerHTML=lang==='en'?'<b style="color:var(--accent)">EN</b> / ID':'EN / <b style="color:var(--accent)">ID</b>';
+ $('#nav').setAttribute('aria-label',t('navL'));document.title='Jojor Putri Pasaribu — Research Atelier'}
+function setLang(l){lang=l;try{localStorage.setItem('lang',l)}catch(e){}applyStatic();renderProjects();renderPubs();renderAbout();renderContact();if($('#dlg').open){const cur=lastP;if(cur)openProject(cur,lastFocus)}}
+let lastP=null;const _op=openProject;openProject=function(p,b){lastP=p;_op(p,b)};
+
+$('#langB').onclick=()=>setLang(lang==='en'?'id':'en');
+$('#themeB').onclick=()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+$('#menuB').onclick=e=>{const n=$('#nav'),o=n.classList.toggle('hidden');n.classList.toggle('flex',!o);n.classList.toggle('absolute',!o);n.classList.toggle('top-16',!o);n.classList.toggle('left-0',!o);n.classList.toggle('right-0',!o);n.classList.toggle('flex-col',!o);n.classList.toggle('p-5',!o);n.style.background=o?'':'var(--bg)';e.currentTarget.setAttribute('aria-expanded',String(!o))};
+$('#nav').addEventListener('click',e=>{if(e.target.tagName==='A'&&innerWidth<768){$('#menuB').click()}});
+$('#dX').onclick=()=>$('#dlg').close();
+$('#dlg').addEventListener('click',e=>{if(e.target===$('#dlg'))$('#dlg').close()});
+$('#dlg').addEventListener('close',()=>{lastP=null;if(lastFocus&&document.contains(lastFocus))lastFocus.focus()});
+
+applyStatic();renderProjects();renderPubs();renderAbout();renderContact();
+
+const links=[...document.querySelectorAll('#nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));const a=links.find(x=>x.getAttribute('href')==='#'+e.target.id);if(a)a.setAttribute('aria-current','true')}}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+const rvo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvo.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv:not(.in)').forEach(e=>rvo.observe(e));
+</script>
+</body>
+</html>
